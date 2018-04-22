@@ -1,0 +1,16 @@
+{
+  "name": "sideout",
+  "repo": "hexagonhq/Sideout",
+  "description": "Simple navigational menus for your application.",
+  "author": "hexagonhq <runshacking@gmail.com>",
+  "version": "1.0",
+  "keywords": [
+    "sideout",
+    "menu"
+  ],
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}

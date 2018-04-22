@@ -1,3 +1,4 @@
+
 	var html = document.documentElement;
 
 	function SideOut(options) {
@@ -11,9 +12,9 @@
 			this.menu.classList.add('sideout-menu');
 		}
 
-		this.tf = 'cubic-bezier(0.4,0.0,0.2,1)';
+		this.tf = options.animation || 'cubic-bezier(0.4,0.0,0.2,1)';
 		this._duration = parseInt(options.duration, 10) || 300;
-		this._transform = parseInt(options.transform, 10) || 255;
+		this._transform = parseInt(options.transform, 10) || 264;
 	};
 
 	SideOut.prototype.open = function() {
@@ -23,24 +24,14 @@
 			html.classList.add('sideout-open');
 		}
 
-		document.body.style.overflowY = 'hidden';
-
 		this._opened = true;
-		var createDiv = document.createElement('div'),
-				container = document.querySelector('.wrapper'),
-				beforeEl = container.querySelector('.maincontent'),
-				append = container.insertBefore(createDiv, beforeEl).className = 'blocked';
-
-		setTimeout(function() {
-			document.querySelector('.blocked').style.opacity = '0.4';
-		}, this._duration);
 			
 		that._setTransition();
 		that._transalteXTo(that._transform);
-		that._setShadow();
+		// that._setShadow();
 
 		setTimeout(function() {
-			that.menu.style.transition = that.menu.style.transition = that.menu.style.boxShadow = '';
+			that.menu.style.transition = that.menu.style.transition = '';
 		}, this._duration + 50);
 
 	};
@@ -51,9 +42,6 @@
 		if (!this._isOpen && !this._opened) {
 			return this;
 		}
-
-		document.body.style.overflowY = '';
-		document.querySelector('.blocked').remove();
 
 		this._opened = false;
 
@@ -75,9 +63,9 @@
 		this.menu.style.transform = 'translate(' + translateX +'px)';
 	};
 
-	SideOut.prototype._setShadow = function() {
-		this.menu.style.boxShadow = '5px 0px 12px 0px rgba(51,51,51,0.06)';
-	};
+	// SideOut.prototype._setShadow = function() {
+	// 	this.menu.style.boxShadow = '5px 0px 12px 0px rgba(51,51,51,0.06)';
+	// };
 
 	SideOut.prototype._isOpen = function() {
 		return this._opened;
