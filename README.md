@@ -2,7 +2,7 @@
 
 ## Demo
 
-[Check out the demo]... to see it in action ( on your browser).
+[Check out the demo](https://hexagonhq.github.io/sideout/) to see it in action ( on your browser).
 
 ## Installation
 
@@ -23,6 +23,7 @@ First of all, you'll need to create your markup. You should have a menu (`#menu`
     <h2> Navigation </h2>
   </div>
 </menu>
+```
 
 Add the Sideout.js styles (router.css) in your web application.
 
@@ -48,6 +49,7 @@ body {
 .sideout-open body {
   overflow: hidden;
 }
+```
 
 Then you just include Sideout.js, create a new instance with some options
 
